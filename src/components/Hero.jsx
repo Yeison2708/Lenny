@@ -94,12 +94,12 @@ export default function Hero() {
         }}
       >
         <motion.h1
-          animate={{ y: [0, -12, 0] }}
-          transition={{
-            duration: 1.8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          // animate={{ y: [0, -12, 0] }}
+          // transition={{
+          //   duration: 1.8,
+          //   repeat: Infinity,
+          //   ease: "easeInOut",
+          // }}
           style={{
             color: "#FFFFFFFF",
             fontSize: "3rem",
@@ -116,12 +116,12 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          animate={{ y: [0, -12, 0] }}
-          transition={{
-            duration: 1.8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          // animate={{ y: [0, -12, 0] }}
+          // transition={{
+          //   duration: 1.8,
+          //   repeat: Infinity,
+          //   ease: "easeInOut",
+          // }}
           style={{
             color: "#FFFFFFFF",
             fontSize: "1.4rem",
