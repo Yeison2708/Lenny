@@ -5,19 +5,16 @@ body {
 }
 
 .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    /* padding: 1px; */
-    background: #fa7dc4;
-    color: #fff;
-    backdrop-filter: blur(6px);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    /* ejemplo rosado */
+    height: 80px;
+    /* altura en escritorio */
+    transition: all 0.3s;
+    color: white;
 }
 
 .nav a {
@@ -33,12 +30,53 @@ body {
     gap: 20px;
 }
 
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo {
+    width: 60px;
+    /* Ajusta según tu logo */
+    height: auto;
+}
+
+/* Estilo del h1 */
+.nav h1 {
+    font-size: 1.8rem;
+    margin-left: 15px;
+    /* Espacio al lado del logo en escritorio */
+}
+
+
+/* Móvil: solo mostrar logo centrado y bajarlo */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column; /* Apilar elementos */
+        align-items: center;    /* Centrar horizontalmente */
+        justify-content: center; /* Centrar verticalmente si hace falta */
+        height: 80px;           /* Ajusta altura del nav en móvil */
+        padding: 5px 10px;      /* Espacio interno reducido */
+    }
+
+    .nav h1 {
+        display: none; /* Oculta el h1 en móvil */
+    }
+
+    .brand-logo {
+        margin: 30px 0 0 0;  /* 🔥 Baja el logo desde arriba */
+        width: 50px;          /* Tamaño del logo más pequeño en móvil */
+        height: auto;
+    }
+}
+
 .hero {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .hero-text {
     position: relative;
     z-index: 10;
