@@ -1,0 +1,85 @@
+.floating-container {
+  position: fixed;
+  bottom: 20px;
+  right: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+  z-index: 999;
+}
+
+.floating-button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.floating-button:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp {
+  background: linear-gradient(45deg, #c80f78, #FFD9E8);
+  animation: jumpWhatsapp 1.4s infinite ease-in-out;
+}
+
+.settings {
+  background: linear-gradient(45deg, #c80f78, #FFD9E8);
+}
+.up {
+  background: linear-gradient(45deg, #c80f78, #FFD9E8);
+}
+
+.whatsapp-bubble {
+  background-color: white;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  position: absolute;
+  right: 70px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Animación de salto sincronizado */
+/* Animación SOLO para el botón de WhatsApp */
+@keyframes jumpWhatsapp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Estilos generales de los botones */
+.floating-button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+
+
