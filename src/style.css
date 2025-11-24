@@ -1,14 +1,32 @@
 /* ----------------------------------
-   GLOBAL
+   GLOBAL THEME LENNY PRO
 ----------------------------------- */
+
+:root {
+    --rose-soft: #F4C6D8;
+    --rose-mid: #E29AB0;
+    --rose-deep: #D87D96;
+
+    --dark-wine: #4A1E25;
+    --dark-purple: #7A4A57;
+    --dark-ultra: #2A0F13;
+
+    --text-light: #ffffff;
+    --text-dark: #3A1A1F;
+}
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(45deg, #ffbde2, #ffffff);
+
+    background: linear-gradient(45deg, var(--rose-soft), #ffffff);
+    color: var(--text-dark);
 }
 
+
+
 /* ----------------------------------
-   NAV – siempre visible
+   NAV – estilo premium
 ----------------------------------- */
 .nav {
     position: fixed;
@@ -21,33 +39,35 @@ body {
     align-items: center;
     justify-content: center;
     gap: 25px;
-    /* 🔥 Espacio entre logo y textos */
 
-    background: #fa7dc4;
-    color: #fff;
-    backdrop-filter: blur(6px);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(
+        90deg,
+        var(--dark-wine),
+        var(--dark-purple)
+    );
+    color: var(--text-light);
+    backdrop-filter: blur(9px);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
 
     padding: 10px 20px;
-    height: 60px;
+    height: 65px;
 }
+
+
 
 /* ----------------------------------
    LOGO
 ----------------------------------- */
-.brand {
-    display: flex;
-    align-items: center;
-}
-
 .brand-logo {
     width: 60px;
     height: 60px;
     object-fit: contain;
 }
 
+
+
 /* ----------------------------------
-   TEXTOS DEL TÍTULO (dos líneas)
+   TITULOS
 ----------------------------------- */
 .title-box {
     display: flex;
@@ -56,46 +76,44 @@ body {
     line-height: 1.1;
 }
 
-.title-main {
-    font-size: 1.6rem;
+.title-main,
+.title-lenny {
+    font-size: 1.7rem;
     font-weight: bold;
+
+    /* rosado profundo elegante */
+    color: var(--rose-soft);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
     margin: 0;
 }
 
 .title-lenny {
-    font-size: 1.6rem;   
-    font-weight: bold;
-    margin: 0;
     margin-top: 5px;
 }
 
-/* ----------------------------------
-   VISTA PC – Título en una sola línea
------------------------------------ */
+
+
+/* PC */
 @media (min-width: 769px) {
     .title-box {
-        flex-direction: row;     /* ➜ Títulos en línea */
-        align-items: center;     
-        gap: 10px;               /* Espacio entre textos */
-        text-align: left;        /* Títulos alineados correctamente */
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        text-align: left;
     }
-
-    .title-lenny {
-        margin-top: 0 !important; /* Quita el salto para escritorio */
-    }
+    .title-lenny { margin-top: 0 !important; }
 }
 
 
+
 /* ----------------------------------
-   RESPONSIVE (móvil)
+   RESPONSIVE
 ----------------------------------- */
 @media (max-width: 768px) {
-
     .nav {
-        height: 55px;
-        padding: 5px 10px;
-        gap: 15px;
-        /* Menos separación en móvil */
+        height: 58px;
+        padding: 5px 12px;
+        gap: 12px;
     }
 
     .brand-logo {
@@ -103,41 +121,40 @@ body {
         height: 45px;
     }
 
-    .title-main {
-        font-size: 1.2rem;
-    }
+    .title-main { font-size: 1.25rem; }
 
-    .title-lenny {
-        font-size: 1rem;
-    }
+    .title-lenny { font-size: 1.05rem; }
 
-    .hero {
-        margin-top: 55px;
-    }
+    .hero { margin-top: 60px; }
 }
 
+
+
 /* ----------------------------------
-   HERO – Ajustado para el navbar fijo
+   HERO
 ----------------------------------- */
 .hero {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    margin-top: 60px;
+    margin-top: 70px;
 }
 
-/* Hero texto */
 .hero-text {
     position: relative;
     z-index: 10;
     text-align: center;
-    color: white;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    color: var(--dark-wine);
+
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px var(--rose-soft);
 }
 
-/* Carrusel */
+
+
+/* CARRUSEL */
 .carousel-container {
     width: 100%;
     height: 100%;
@@ -150,64 +167,97 @@ body {
 }
 
 @keyframes fade {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
+
+
 
 /* ----------------------------------
    PRODUCTOS
 ----------------------------------- */
 .products {
-    padding: 60px 20px;
+    padding: 70px 20px;
     text-align: center;
+    color: var(--dark-wine);
 }
 
 .grid {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 35px;
     flex-wrap: wrap;
 }
 
+
+
+/* CARD */
 .card {
-    background: white;
+    background: #ffffff;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 250px;
+    border-radius: 18px;
+
+    border: 2px solid var(--rose-soft);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+
+    width: 260px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
 }
 
 .card img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
-/* ----------------------------------
-   ANIMACIÓN PARA CARDS QUE CRECEN AL TOCAR (MÓVIL)
------------------------------------ */
+
+
+/* Card mobile */
 @media (max-width: 768px) {
     .card {
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .card:active {
-        transform: scale(1.06); /* 🔥 Se agranda suavemente */
-        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        transform: scale(1.07);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.26);
     }
 }
+
+
+
+/* ----------------------------------
+   BOTONES (THEME COMPLETO)
+----------------------------------- */
+.btn-primary {
+    background: linear-gradient(135deg, var(--rose-deep), var(--dark-purple));
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+
 
 /* ----------------------------------
    FOOTER
 ----------------------------------- */
 .footer {
     text-align: center;
-    padding: 20px;
-    background: #fa7dc4;
-    color: white;
+    padding: 25px;
+    background: linear-gradient(90deg, var(--dark-wine), var(--dark-purple));
+    color: var(--rose-soft);
     margin-top: 40px;
 }

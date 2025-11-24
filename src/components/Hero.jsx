@@ -10,7 +10,7 @@ const images = [
 export default function Hero() {
   const [index, setIndex] = useState(0);
 
-  // Cambio automático
+  // Cambio automático cada 4s
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
@@ -18,12 +18,11 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  // Movimiento del carousel con drag (mouse + touch)
+  // Drag del carousel
   const handleDragEnd = (event, info) => {
     if (info.offset.x > 60) {
       setIndex((prev) => (prev - 1 + images.length) % images.length);
-    } 
-    else if (info.offset.x < -60) {
+    } else if (info.offset.x < -60) {
       setIndex((prev) => (prev + 1) % images.length);
     }
   };
@@ -41,7 +40,7 @@ export default function Hero() {
         overflow: "hidden",
       }}
     >
-      {/* 🔥 Fondo desenfocado */}
+      {/* 🔥 Fondo con blur + tono oscuro elegante */}
       <div
         style={{
           position: "absolute",
@@ -49,13 +48,13 @@ export default function Hero() {
           backgroundImage: `url(${images[index]})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "blur(20px) brightness(0.5)",
-          transform: "scale(1.2)",
+          filter: "blur(22px) brightness(0.45)",
+          transform: "scale(1.25)",
           zIndex: 0,
         }}
       ></div>
 
-      {/* 🔥 IMAGEN PRINCIPAL (drag para mover) */}
+      {/* 🔥 Imagen principal del carrusel */}
       <AnimatePresence>
         <motion.img
           key={index}
@@ -65,14 +64,14 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.2 }}
+          transition={{ duration: 1.1 }}
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           onDragEnd={handleDragEnd}
           style={{
             width: "100%",
             height: "100%",
-            objectFit: "contain", // 🔥 NO recorta imágenes
+            objectFit: "contain",
             position: "absolute",
             top: 0,
             left: 0,
@@ -82,7 +81,9 @@ export default function Hero() {
         />
       </AnimatePresence>
 
-      {/* 🔥 TEXTO CENTRADO CON EFECTO NEÓN */}
+      {/* ------------------------------------------
+           🔥 TEXTO LENNY PRO – PALETA COMBINADA
+      ------------------------------------------- */}
       <div
         style={{
           position: "absolute",
@@ -91,24 +92,18 @@ export default function Hero() {
           transform: "translate(-50%, -50%)",
           zIndex: 5,
           textAlign: "center",
+          padding: "10px 20px",
         }}
       >
         <motion.h1
-          // animate={{ y: [0, -12, 0] }}
-          // transition={{
-          //   duration: 1.8,
-          //   repeat: Infinity,
-          //   ease: "easeInOut",
-          // }}
           style={{
-            color: "#FFFFFFFF",
+            color: "#FFFFFF",
             fontSize: "3rem",
-            fontWeight: "bold",
+            fontWeight: "700",
             textShadow: `
-              0 0 10px #FF00EA,
-              0 0 20px #FF00EA,
-              0 0 40px #FF00EA,
-              0 0 80px #FF00EA
+              0 0 12px #F4C6D8,
+              0 0 28px #D87D96,
+              0 0 40px #4A1E25
             `,
           }}
         >
@@ -116,19 +111,13 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          // animate={{ y: [0, -12, 0] }}
-          // transition={{
-          //   duration: 1.8,
-          //   repeat: Infinity,
-          //   ease: "easeInOut",
-          // }}
           style={{
-            color: "#FFFFFFFF",
-            fontSize: "1.4rem",
-            marginTop: "10px",
+            color: "#FFFFFF",
+            fontSize: "1.35rem",
+            marginTop: "12px",
             textShadow: `
-              0 0 10px #FF00EA,
-              0 0 20px #FF00EA
+              0 0 10px #E29AB0,
+              0 0 20px #7A4A57
             `,
           }}
         >
@@ -136,7 +125,9 @@ export default function Hero() {
         </motion.p>
       </div>
 
-      {/* ⚪ CÍRCULOS ABAJO */}
+      {/* ------------------------------------------
+         ⚪ CÍRCULOS DE NAVEGACIÓN (versión Lenny Pro)
+      ------------------------------------------- */}
       <div
         style={{
           position: "absolute",
@@ -153,13 +144,20 @@ export default function Hero() {
             key={i}
             onClick={() => setIndex(i)}
             style={{
-              width: "12px",
-              height: "12px",
+              width: "13px",
+              height: "13px",
               borderRadius: "50%",
               cursor: "pointer",
-              background: index === i ? "#FF00EA" : "black",
-              transform: index === i ? "scale(1.3)" : "scale(1)",
-              transition: "0.3s",
+              background:
+                index === i
+                  ? "linear-gradient(135deg, #F4C6D8, #D87D96)"
+                  : "#2A0F13",
+              boxShadow:
+                index === i
+                  ? "0 0 8px #F4C6D8, 0 0 14px #D87D96"
+                  : "0 0 4px rgba(0,0,0,0.4)",
+              transform: index === i ? "scale(1.4)" : "scale(1)",
+              transition: "0.33s",
             }}
           ></div>
         ))}
