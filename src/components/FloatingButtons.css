@@ -24,18 +24,35 @@
   transform: scale(1.1);
 }
 
+/* Botón Instagram */
+.instagram {
+  background: linear-gradient(45deg, #c80f78, #FFD9E8);
+  animation: jumpWhatsapp 1.4s infinite ease-in-out;
+}
+
+/* Botón WhatsApp */
 .whatsapp {
   background: linear-gradient(45deg, #c80f78, #FFD9E8);
   animation: jumpWhatsapp 1.4s infinite ease-in-out;
 }
 
-.settings {
-  background: linear-gradient(45deg, #c80f78, #FFD9E8);
-}
+/* Botón subir */
 .up {
   background: linear-gradient(45deg, #c80f78, #FFD9E8);
 }
 
+/* Animaciones */
+@keyframes jumpWhatsapp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Mensaje opcional tipo burbuja */
 .whatsapp-bubble {
   background-color: white;
   color: #333;
@@ -48,38 +65,3 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   animation: bounce 1.5s infinite;
 }
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-/* Animación de salto sincronizado */
-/* Animación SOLO para el botón de WhatsApp */
-@keyframes jumpWhatsapp {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* Estilos generales de los botones */
-.floating-button {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  color: white;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s;
-}
-
-
-
