@@ -40,7 +40,7 @@ export default function Hero() {
         overflow: "hidden",
       }}
     >
-      {/* 🔥 Fondo con blur + tono oscuro elegante */}
+      {/* Fondo nude suave con blur */}
       <div
         style={{
           position: "absolute",
@@ -48,13 +48,13 @@ export default function Hero() {
           backgroundImage: `url(${images[index]})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "blur(22px) brightness(0.45)",
+          filter: "blur(22px) brightness(0.55)",
           transform: "scale(1.25)",
           zIndex: 0,
         }}
       ></div>
 
-      {/* 🔥 Imagen principal del carrusel */}
+      {/* Imagen principal */}
       <AnimatePresence>
         <motion.img
           key={index}
@@ -81,9 +81,7 @@ export default function Hero() {
         />
       </AnimatePresence>
 
-      {/* ------------------------------------------
-           🔥 TEXTO LENNY PRO – PALETA COMBINADA
-      ------------------------------------------- */}
+      {/* TEXTO NUDE SUAVE */}
       <div
         style={{
           position: "absolute",
@@ -97,13 +95,13 @@ export default function Hero() {
       >
         <motion.h1
           style={{
-            color: "#FFFFFF",
+            color: "var(--nude-crema)",
             fontSize: "3rem",
             fontWeight: "700",
             textShadow: `
-              0 0 12px #F4C6D8,
-              0 0 28px #D87D96,
-              0 0 40px #4A1E25
+              0 0 12px var(--nude-beige),
+              0 0 26px var(--nude-rosado),
+              0 0 40px var(--nude-cafe)
             `,
           }}
         >
@@ -112,12 +110,12 @@ export default function Hero() {
 
         <motion.p
           style={{
-            color: "#FFFFFF",
+            color: "var(--nude-crema)",
             fontSize: "1.35rem",
             marginTop: "12px",
             textShadow: `
-              0 0 10px #E29AB0,
-              0 0 20px #7A4A57
+              0 0 10px var(--nude-rosado),
+              0 0 20px var(--nude-cafe)
             `,
           }}
         >
@@ -125,9 +123,7 @@ export default function Hero() {
         </motion.p>
       </div>
 
-      {/* ------------------------------------------
-         ⚪ CÍRCULOS DE NAVEGACIÓN (versión Lenny Pro)
-      ------------------------------------------- */}
+      {/* CÍRCULOS DE NAVEGACIÓN – NUEVA PALETA */}
       <div
         style={{
           position: "absolute",
@@ -148,15 +144,18 @@ export default function Hero() {
               height: "13px",
               borderRadius: "50%",
               cursor: "pointer",
+
               background:
                 index === i
-                  ? "linear-gradient(135deg, #F4C6D8, #D87D96)"
-                  : "#2A0F13",
+                  ? "linear-gradient(135deg, var(--nude-rosado), var(--nude-tierra))"
+                  : "var(--nude-cafe)",
+
               boxShadow:
                 index === i
-                  ? "0 0 8px #F4C6D8, 0 0 14px #D87D96"
+                  ? "0 0 8px var(--nude-rosado), 0 0 14px var(--nude-tierra)"
                   : "0 0 4px rgba(0,0,0,0.4)",
-              transform: index === i ? "scale(1.4)" : "scale(1)",
+
+              transform: index === i ? "scale(1.35)" : "scale(1)",
               transition: "0.33s",
             }}
           ></div>

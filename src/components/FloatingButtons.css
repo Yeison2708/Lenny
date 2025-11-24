@@ -15,7 +15,7 @@
 
 
 /* ----------------------------------
-   BOTÓN BASE (theme Lenny Pro)
+   BOTÓN BASE (theme Nude Suave)
 ----------------------------------- */
 .floating-button {
   width: 58px;
@@ -24,12 +24,12 @@
   border: none;
   cursor: pointer;
 
-  color: #ffffff;
+  color: var(--text-light);
 
   background: linear-gradient(
     135deg,
-    #4A1E25,
-    #7A4A57
+    var(--nude-cafe),
+    var(--nude-tierra)
   );
 
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
@@ -44,35 +44,35 @@
 
 
 /* ----------------------------------
-   BOTONES INDIVIDUALES
+   BOTONES INDIVIDUALES – Nude Sensual
 ----------------------------------- */
 
-/* Instagram – rosa sensual */
+/* Instagram – rosado nude suave */
 .instagram {
   background: linear-gradient(
     135deg,
-    #E29AB0,
-    #4A1E25
+    var(--nude-rosado),
+    var(--nude-cafe)
   );
   animation: jump 1.4s infinite ease-in-out;
 }
 
-/* WhatsApp – mezcla premium */
+/* WhatsApp – degradado cálido */
 .whatsapp {
   background: linear-gradient(
     135deg,
-    #E29AB0,
-    #4A1E25
+    var(--nude-rosado),
+    var(--nude-cafe)
   );
   animation: jump 1.4s infinite ease-in-out;
 }
 
-/* Botón subir – tono oscuro elegante */
+/* Botón subir – tono más elegante */
 .up {
   background: linear-gradient(
     135deg,
-    #E29AB0,
-    #4A1E25
+    var(--nude-tierra),
+    var(--nude-cafe)
   );
 }
 
@@ -89,11 +89,11 @@
 
 
 /* ----------------------------------
-   BURBUJA WHATSAPP
+   BURBUJA WHATSAPP – Nude Profesional
 ----------------------------------- */
 .whatsapp-bubble {
-  background-color: #ffffff;
-  color: #4A1E25;
+  background-color: var(--nude-crema);
+  color: var(--nude-cafe);
 
   padding: 8px 12px;
   border-radius: 20px;

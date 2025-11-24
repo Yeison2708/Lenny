@@ -1,32 +1,30 @@
 /* ----------------------------------
-   GLOBAL THEME LENNY PRO
+   GLOBAL THEME LENNY PRO – NUDE SUAVE
 ----------------------------------- */
 
 :root {
-    --rose-soft: #F4C6D8;
-    --rose-mid: #E29AB0;
-    --rose-deep: #D87D96;
-
-    --dark-wine: #4A1E25;
-    --dark-purple: #7A4A57;
-    --dark-ultra: #2A0F13;
+    --nude-crema:   #F6EDE3;   /* Fondo suave */
+    --nude-beige:   #E9D5C5;   /* Acentos */
+    --nude-rosado:  #D9B8A9;   /* Botones suaves */
+    --nude-tierra:  #C49A85;   /* Botones y sombras */
+    --nude-cafe:    #8A6755;   /* Texto oscuro premium */
 
     --text-light: #ffffff;
-    --text-dark: #3A1A1F;
+    --text-dark:  #4A3327;
 }
 
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
 
-    background: linear-gradient(45deg, var(--rose-soft), #ffffff);
+    background: linear-gradient(45deg, var(--nude-crema), #ffffff);
     color: var(--text-dark);
 }
 
 
 
 /* ----------------------------------
-   NAV – estilo premium
+   NAV – estilo premium nude
 ----------------------------------- */
 .nav {
     position: fixed;
@@ -40,14 +38,10 @@ body {
     justify-content: center;
     gap: 25px;
 
-    background: linear-gradient(
-        90deg,
-        var(--dark-wine),
-        var(--dark-purple)
-    );
+    background: linear-gradient(90deg, var(--nude-cafe), var(--nude-tierra));
     color: var(--text-light);
     backdrop-filter: blur(9px);
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 
     padding: 10px 20px;
     height: 65px;
@@ -81,9 +75,8 @@ body {
     font-size: 1.7rem;
     font-weight: bold;
 
-    /* rosado profundo elegante */
-    color: var(--rose-soft);
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
     margin: 0;
 }
 
@@ -93,7 +86,6 @@ body {
 
 
 
-/* PC */
 @media (min-width: 769px) {
     .title-box {
         flex-direction: row;
@@ -112,29 +104,28 @@ body {
 @media (max-width: 768px) {
 
     .nav {
-        height: 72px !important;      /* 🔥 Antes 58px → ahora NO se corta */
+        height: 72px !important;
         padding: 10px 16px !important;
         gap: 14px;
     }
 
     .brand-logo {
-        width: 42px;                 /* Más pequeño para no aplastar */
+        width: 42px;
         height: 42px;
     }
 
     .title-main,
     .title-lenny {
-        line-height: 1.0;            /* 🔥 Evita que los textos estiren la franja */
+        line-height: 1.0;
     }
 
     .title-main { font-size: 1.22rem; }
     .title-lenny { font-size: 1.02rem; }
 
     .hero {
-        margin-top: 78px !important; /* Compensa la nueva altura */
+        margin-top: 78px !important;
     }
 }
-
 
 
 
@@ -153,11 +144,11 @@ body {
     position: relative;
     z-index: 10;
     text-align: center;
-    color: var(--dark-wine);
+    color: var(--nude-cafe);
 
     text-shadow: 
         0 0 10px rgba(255, 255, 255, 0.8),
-        0 0 20px var(--rose-soft);
+        0 0 20px var(--nude-beige);
 }
 
 
@@ -176,7 +167,7 @@ body {
 
 @keyframes fade {
     from { opacity: 0; }
-    to { opacity: 1; }
+    to   { opacity: 1; }
 }
 
 
@@ -187,7 +178,7 @@ body {
 .products {
     padding: 70px 20px;
     text-align: center;
-    color: var(--dark-wine);
+    color: var(--nude-cafe);
 }
 
 .grid {
@@ -201,21 +192,21 @@ body {
 
 /* CARD */
 .card {
-    background: #7A4A57;
+    background: var(--nude-beige);
     padding: 20px;
     border-radius: 18px;
 
-    border: 2px solid var(--rose-soft);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    border: 2px solid var(--nude-rosado);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 
     width: 260px;
     transition: transform 0.35s ease, box-shadow 0.35s ease;
-    color: #F4C6D8;
+    color: var(--nude-cafe);
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
 }
 
 .card img {
@@ -240,10 +231,10 @@ body {
 
 
 /* ----------------------------------
-   BOTONES (THEME COMPLETO)
+   BOTONES – Nude elegante
 ----------------------------------- */
 .btn-primary {
-    background: linear-gradient(135deg, var(--rose-deep), var(--dark-purple));
+    background: linear-gradient(135deg, var(--nude-rosado), var(--nude-tierra));
     color: var(--text-light);
     padding: 12px 25px;
     border-radius: 30px;
@@ -266,7 +257,7 @@ body {
 .footer {
     text-align: center;
     padding: 25px;
-    background: linear-gradient(90deg, var(--dark-wine), var(--dark-purple));
-    color: var(--rose-soft);
+    background: linear-gradient(90deg, var(--nude-cafe), var(--nude-tierra));
+    color: var(--nude-crema);
     margin-top: 40px;
 }
