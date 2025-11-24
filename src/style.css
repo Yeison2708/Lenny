@@ -110,23 +110,31 @@ body {
    RESPONSIVE
 ----------------------------------- */
 @media (max-width: 768px) {
+
     .nav {
-        height: 58px;
-        padding: 5px 12px;
-        gap: 12px;
+        height: 72px !important;      /* 🔥 Antes 58px → ahora NO se corta */
+        padding: 10px 16px !important;
+        gap: 14px;
     }
 
     .brand-logo {
-        width: 45px;
-        height: 45px;
+        width: 42px;                 /* Más pequeño para no aplastar */
+        height: 42px;
     }
 
-    .title-main { font-size: 1.25rem; }
+    .title-main,
+    .title-lenny {
+        line-height: 1.0;            /* 🔥 Evita que los textos estiren la franja */
+    }
 
-    .title-lenny { font-size: 1.05rem; }
+    .title-main { font-size: 1.22rem; }
+    .title-lenny { font-size: 1.02rem; }
 
-    .hero { margin-top: 60px; }
+    .hero {
+        margin-top: 78px !important; /* Compensa la nueva altura */
+    }
 }
+
 
 
 
@@ -193,7 +201,7 @@ body {
 
 /* CARD */
 .card {
-    background: #ffffff;
+    background: #7A4A57;
     padding: 20px;
     border-radius: 18px;
 
@@ -202,6 +210,7 @@ body {
 
     width: 260px;
     transition: transform 0.35s ease, box-shadow 0.35s ease;
+    color: white;
 }
 
 .card:hover {
