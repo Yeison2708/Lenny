@@ -188,6 +188,21 @@ body {
 }
 
 /* ----------------------------------
+   ANIMACIÓN PARA CARDS EN CELULAR
+----------------------------------- */
+@media (max-width: 768px) {
+    .card {
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:active {
+        transform: scale(0.95); /* 🔥 Se encoge al tocar */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+}
+
+
+/* ----------------------------------
    FOOTER
 ----------------------------------- */
 .footer {
