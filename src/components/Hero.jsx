@@ -132,7 +132,7 @@ export default function Hero() {
             `,
           }}
         >
-          Realza tu belleza con nuestra corsetería premium
+          Realza tu belleza con nuestra corsetería Lenny
         </motion.p>
       </div>
 
