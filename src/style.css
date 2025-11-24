@@ -1,14 +1,17 @@
+/* ----------------------------------
+   GLOBAL
+----------------------------------- */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(45deg, #ffbde2, #ffffff);
 }
 
-/* --------------------------
-   NAV – Fijo, centrado, limpio
---------------------------- */
+/* ----------------------------------
+   NAV – siempre visible
+----------------------------------- */
 .nav {
-    position: fixed;   /* 🔥 Se mueve contigo */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -17,72 +20,112 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 25px;
+    /* 🔥 Espacio entre logo y textos */
 
     background: #fa7dc4;
     color: #fff;
     backdrop-filter: blur(6px);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 
     padding: 10px 20px;
     height: 60px;
 }
 
-/* Logo + Texto juntos */
+/* ----------------------------------
+   LOGO
+----------------------------------- */
 .brand {
     display: flex;
     align-items: center;
-    gap: 25px;         /* 🔥 separación correcta */
 }
 
-/* Logo */
 .brand-logo {
     width: 60px;
-    height: auto;
+    height: 60px;
+    object-fit: contain;
 }
 
-/* Texto del título */
-.nav h1 {
-    font-size: 1.6rem;
-    margin: 0;
+/* ----------------------------------
+   TEXTOS DEL TÍTULO (dos líneas)
+----------------------------------- */
+.title-box {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    line-height: 1.1;
 }
 
-/* --------------------------
-   RESPONSIVE (móvil)
---------------------------- */
-@media (max-width: 768px) {
-    .nav {
-        height: 50px;
-        padding: 5px 10px;
+.title-main {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.title-lenny {
+    font-size: 1.6rem;   
+    font-weight: bold;
+    margin: 0;
+    margin-top: 5px;
+}
+
+/* ----------------------------------
+   VISTA PC – Título en una sola línea
+----------------------------------- */
+@media (min-width: 769px) {
+    .title-box {
+        flex-direction: row;     /* ➜ Títulos en línea */
+        align-items: center;     
+        gap: 10px;               /* Espacio entre textos */
+        text-align: left;        /* Títulos alineados correctamente */
     }
 
-    .brand {
+    .title-lenny {
+        margin-top: 0 !important; /* Quita el salto para escritorio */
+    }
+}
+
+
+/* ----------------------------------
+   RESPONSIVE (móvil)
+----------------------------------- */
+@media (max-width: 768px) {
+
+    .nav {
+        height: 55px;
+        padding: 5px 10px;
         gap: 15px;
+        /* Menos separación en móvil */
     }
 
     .brand-logo {
-        width: 50px;
+        width: 45px;
+        height: 45px;
     }
 
-    .nav h1 {
+    .title-main {
         font-size: 1.2rem;
     }
 
+    .title-lenny {
+        font-size: 1rem;
+    }
+
     .hero {
-        margin-top: 50px;
+        margin-top: 55px;
     }
 }
 
-/* --------------------------
-   HERO – Ajustado para no tapar
---------------------------- */
+/* ----------------------------------
+   HERO – Ajustado para el navbar fijo
+----------------------------------- */
 .hero {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    margin-top: 60px;  
+    margin-top: 60px;
 }
 
 /* Hero texto */
@@ -107,13 +150,18 @@ body {
 }
 
 @keyframes fade {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
-/* --------------------------
+/* ----------------------------------
    PRODUCTOS
---------------------------- */
+----------------------------------- */
 .products {
     padding: 60px 20px;
     text-align: center;
@@ -139,9 +187,9 @@ body {
     border-radius: 10px;
 }
 
-/* --------------------------
+/* ----------------------------------
    FOOTER
---------------------------- */
+----------------------------------- */
 .footer {
     text-align: center;
     padding: 20px;
