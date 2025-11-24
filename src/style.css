@@ -4,79 +4,88 @@ body {
     background: linear-gradient(45deg, #ffbde2, #ffffff);
 }
 
+/* --------------------------
+   NAV – Fijo, centrado, limpio
+--------------------------- */
 .nav {
+    position: fixed;   /* 🔥 Se mueve contigo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+
+    background: #fa7dc4;
+    color: #fff;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+
     padding: 10px 20px;
-    background-color: #ff69b4;
-    /* ejemplo rosado */
-    height: 80px;
-    /* altura en escritorio */
-    transition: all 0.3s;
-    color: white;
+    height: 60px;
 }
 
-.nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 15px;
-}
-
-.nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
+/* Logo + Texto juntos */
 .brand {
     display: flex;
     align-items: center;
+    gap: 25px;         /* 🔥 separación correcta */
 }
 
+/* Logo */
 .brand-logo {
     width: 60px;
-    /* Ajusta según tu logo */
     height: auto;
 }
 
-/* Estilo del h1 */
+/* Texto del título */
 .nav h1 {
-    font-size: 1.8rem;
-    margin-left: 15px;
-    /* Espacio al lado del logo en escritorio */
+    font-size: 1.6rem;
+    margin: 0;
+    text-align: center;
 }
 
-
-/* Móvil: solo mostrar logo centrado y bajarlo */
+/* --------------------------
+   RESPONSIVE (móvil)
+--------------------------- */
 @media (max-width: 768px) {
     .nav {
-        flex-direction: column; /* Apilar elementos */
-        align-items: center;    /* Centrar horizontalmente */
-        justify-content: center; /* Centrar verticalmente si hace falta */
-        height: 80px;           /* Ajusta altura del nav en móvil */
-        padding: 5px 10px;      /* Espacio interno reducido */
+        height: 50px;
+        padding: 5px 10px;
     }
 
-    .nav h1 {
-        display: none; /* Oculta el h1 en móvil */
+    .brand {
+        gap: 15px;
     }
 
     .brand-logo {
-        margin: 30px 0 0 0;  /* 🔥 Baja el logo desde arriba */
-        width: 50px;          /* Tamaño del logo más pequeño en móvil */
-        height: auto;
+        width: 50px;
+    }
+
+    .nav h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        margin-top: 50px;
     }
 }
 
+/* --------------------------
+   HERO – Ajustado para no tapar
+--------------------------- */
 .hero {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin-top: 60px;  
 }
 
+/* Hero texto */
 .hero-text {
     position: relative;
     z-index: 10;
@@ -85,6 +94,7 @@ body {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
+/* Carrusel */
 .carousel-container {
     width: 100%;
     height: 100%;
@@ -97,15 +107,13 @@ body {
 }
 
 @keyframes fade {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
+/* --------------------------
+   PRODUCTOS
+--------------------------- */
 .products {
     padding: 60px 20px;
     text-align: center;
@@ -131,27 +139,13 @@ body {
     border-radius: 10px;
 }
 
-/* h2 {
-    color: #52dfff;
-} */
-
+/* --------------------------
+   FOOTER
+--------------------------- */
 .footer {
     text-align: center;
     padding: 20px;
     background: #fa7dc4;
     color: white;
     margin-top: 40px;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 1px;
-}
-
-.brand-logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    margin-left: 5px;
 }

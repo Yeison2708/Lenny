@@ -2,15 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const items=[
-  {name:'Faja Deluxe', img:''},
-  {name:'Brasier Comfort', img:''},
-  { name: 'Short Modelador', img: '' },
-  {name:'Faja ', img:''},
-  {name:'Brasier Comfort', img:''},
-  { name: 'Short Modelador', img: '' },
-  {name:'Fajas', img:''},
-  {name:'Brasier Comfort', img:''},
-  {name:'Short Modelador', img:''}
+  {name:'Faja Deluxe', img:'/img/1.jpeg'},
+  {name:'Brasier Comfort', img:'/img/2.jpeg'},
+  {name: 'Short Modelador', img: '/img/3.jpeg' },
+  {name:'Faja ', img:'/img/4.jpeg'},
+  {name:'Brasier Comfort', img:'/img/5.jpeg'},
+  {name: 'Short Modelador', img: '/img/6.jpeg'},
+  // {name:'Fajas', img:'/img/7.jpeg'},
+  {name:'Brasier Comfort', img:'/img/8.jpeg'},
 ];
 
 export default function Products(){
