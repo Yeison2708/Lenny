@@ -210,7 +210,7 @@ body {
 
     width: 260px;
     transition: transform 0.35s ease, box-shadow 0.35s ease;
-    color: white;
+    color: #F4C6D8;
 }
 
 .card:hover {
